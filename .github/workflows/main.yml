@@ -1,0 +1,28 @@
+#For the provider URL: Use https://token.actions.githubusercontent.com....
+#For the "Audience": Use sts.amazonaws.com 
+name: AWS OIDC Connect Demo..
+on:
+  push
+env:
+  AWS_REGION : "us-east-1"   
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
+jobs:
+  DemoOIDC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+
+      - name: configure aws credentialss
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::685421549691:role/sandeep-github-role
+          role-session-name: samplerolesession
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Print AWS s3 buckets
+        run: aws s3 ls
+
+      
