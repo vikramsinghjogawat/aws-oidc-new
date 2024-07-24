@@ -29,6 +29,9 @@ To add the GitHub OIDC provider to IAM, follow the instructions provided in the 
 5. **Create the provider**:
    - Follow the remaining prompts to complete the setup.
 
+6. **Create a role for the provider**:
+   - Provide a role (s3FullAccess) and mention the GitHub organizaition, Repository and Branch details.
+     
 ## Usage
 After adding the GitHub OIDC provider, you can configure your GitHub Actions workflows to assume roles in your AWS account. This allows your workflows to access AWS resources securely without needing long-lived AWS credentials.
 
