@@ -1,4 +1,5 @@
 #For the provider URL: Use https://token.actions.githubusercontent.com....
+#Vikram singh
 #For the "Audience": Use sts.amazonaws.com 
 name: AWS OIDC Connect Demo
 on:
@@ -18,7 +19,7 @@ jobs:
       - name: configure aws credentialss
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::685421549691:role/github-actions-role123
+          role-to-assume: arn:aws:iam::529088275121:role/vikram-s3-full-access-for-git
           role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
 
