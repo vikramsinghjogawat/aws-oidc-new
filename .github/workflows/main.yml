@@ -19,7 +19,7 @@ jobs:
       - name: configure aws credentialss
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::529088275121:role/vikram-s3-full-access-for-git
+          role-to-assume: arn:aws:iam::529088275121:role/vikram-s3-full-access-2
           role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
 
